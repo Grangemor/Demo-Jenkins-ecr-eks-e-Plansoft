@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: docker-helloworld
-        image: public.ecr.aws/j7c0z4k6/docker-helloworld
+        image: public.ecr.aws/e5k2g5i2/jenkinsbuild
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
