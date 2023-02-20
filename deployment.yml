@@ -36,7 +36,7 @@ spec:
   - name: http
     port: 80
     protocol: TCP
-    targetPort: 8085
+    targetPort: 80
   type: LoadBalancer
   selector:
     app: docker-helloworld
