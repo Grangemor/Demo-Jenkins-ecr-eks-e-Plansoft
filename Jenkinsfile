@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Cloning Git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/Osomudeya/jenkins-ecr-eks.git']]])     
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/Grangemor/Demo-Jenkins-ecr-eks-e-Plansoft']]])     
             }
         }
     // Building Docker images
