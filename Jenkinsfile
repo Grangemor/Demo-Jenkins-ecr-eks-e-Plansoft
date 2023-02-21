@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        registry = "public.ecr.aws/e5k2g5i2/e-plansoftdemoimage"
+        registry = "public.ecr.aws/e5k2g5i2/e-plansoftdemoimg"
     }
    
     stages {
