@@ -22,8 +22,8 @@ spec:
         - containerPort: 8085
           name: http
           protocol: TCP
-        volumes:
-          apache2.conf: /etc/apache2/apache2.conf
+      volumes:
+        apache2.conf: /etc/apache2/apache2.conf
 # service type loadbalancer       
 ---
 apiVersion: v1
