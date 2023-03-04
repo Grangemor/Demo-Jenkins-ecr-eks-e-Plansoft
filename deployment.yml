@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: docker-helloworld
-          image: ubuntu/apache2
+          image: rapidfort/apache2-ib
           imagePullPolicy: Always
           ports:
             - containerPort: 8085
