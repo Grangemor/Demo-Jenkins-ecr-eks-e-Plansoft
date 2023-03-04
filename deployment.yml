@@ -30,7 +30,7 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: config
+            name: apache-config
             items:
               - key: apache2.conf
                 path: apache2.conf
