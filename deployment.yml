@@ -27,13 +27,13 @@ spec:
             - name: config
               mountPath: /etc/apache2/apache2.conf
               subPath: apache2.conf
-    volumes:
-      - name: config
-        configMap:
-          name: config
-          items:
-            - key: apache2.conf
-          path: apache2.conf
+      volumes:
+        - name: config
+          configMap:
+            name: config
+            items:
+              - key: apache2.conf
+            path: apache2.conf
 
 ---
 apiVersion: v1
