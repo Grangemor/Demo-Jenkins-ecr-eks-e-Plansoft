@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,16 +16,25 @@ spec:
         app: docker-helloworld
     spec:
       containers:
-      - name: docker-helloworld
-        image: public.ecr.aws/e5k2g5i2/e-plansoftdemoimg
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 8085
-          name: http
-          protocol: TCP
-      volumes:
-        apache2.conf: /etc/apache2/apache2.conf
-# service type loadbalancer       
+        - name: docker-helloworld
+          image: public.ecr.aws/e5k2g5i2/e-plansoftdemoimg
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8085
+              name: http
+              protocol: TCP
+          volumeMounts:
+            - name: config
+              mountPath: /etc/apache2/apache2.conf
+              subPath: apache2.conf
+    volumes:
+      - name: config
+        configMap:
+          name: config
+          items:
+            - key: apache2.conf
+          path: apache2.conf
+
 ---
 apiVersion: v1
 kind: Service
@@ -35,10 +45,10 @@ metadata:
   name: docker-helloworld
 spec:
   ports:
-  - name: http
-    port: 80
-    protocol: TCP
-    targetPort: 8085
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8085
   type: LoadBalancer
   selector:
     app: docker-helloworld
