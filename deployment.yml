@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: docker-helloworld
-          image: public.ecr.aws/e5k2g5i2/e-plansoftdemoimg
+          image: ubuntu/apache2
           imagePullPolicy: Always
           ports:
             - containerPort: 8085
