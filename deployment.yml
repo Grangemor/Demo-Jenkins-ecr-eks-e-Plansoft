@@ -28,10 +28,10 @@ spec:
               mountPath: /etc/apache2/apache2.conf
               subPath: apache2.conf
             - name: crt
-              mountpath: /etc/pki/tls/certs/localhost.crt
+              mountPath: /etc/pki/tls/certs/localhost.crt
               subPath: rootCA.crt
             - name: key
-              mountpath: /etc/pki/tls/certs/localhost.key
+              mountPath: /etc/pki/tls/certs/localhost.key
               subPath: rootCA.key
       volumes:
         - name: config
