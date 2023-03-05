@@ -27,6 +27,12 @@ spec:
             - name: config
               mountPath: /etc/apache2/apache2.conf
               subPath: apache2.conf
+            - name: crt
+              mountpath: /etc/pki/tls/certs/localhost.crt
+              subPath: rootCA.crt
+            - name: key
+              mountpath: /etc/pki/tls/certs/localhost.key
+              subPath: rootCA.key
       volumes:
         - name: config
           configMap:
@@ -34,6 +40,10 @@ spec:
             items:
               - key: apache2.conf
                 path: apache2.conf
+              - key: rootCA.crt
+                path: rootCA.crt
+              - key: rootCA.key
+                path: rootCA.key
 ---
 apiVersion: v1
 kind: Service
