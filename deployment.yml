@@ -40,8 +40,16 @@ spec:
             items:
               - key: apache2.conf
                 path: apache2.conf
+        - name: crt
+          configMap:
+            name: apache-config
+            items:
               - key: rootCA.crt
                 path: rootCA.crt
+        - name: key
+          configMap:
+            name: apache-config
+            items:
               - key: rootCA.key
                 path: rootCA.key
 ---
