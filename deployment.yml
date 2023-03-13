@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: docker-helloworld
-          image: rapidfort/apache2-ib
+          image: public.ecr.aws/e5k2g5i2/e-plansoftdemoimg
           imagePullPolicy: Always
           ports:
             - containerPort: 8085
